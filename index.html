@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMPD — Sistem Manajemen Piket Digital</title>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- QR Code lib (untuk siswa profil) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- QR Scanner lib (untuk guru scanner) -->
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+
+  <!-- Style aplikasi -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Loading state */
+    #app:empty::after {
+      content: '';
+      display: flex;
+      width: 40px; height: 40px;
+      border: 3px solid var(--border-md);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      position: fixed; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <!-- Seluruh aplikasi di-render di sini oleh Router -->
+  <div id="app"></div>
+
+  <!-- Logic: DB, Auth, Router, semua halaman -->
+  <script src="app.js"></script>
+
+</body>
+</html>
